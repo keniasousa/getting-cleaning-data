@@ -153,11 +153,11 @@ This list of variables was obtained with the following code:
     # considering the tidy data is in the variable 'data'
     names(data)
 
-"Activities": Activities performed by the subjects in the experiment. The levels are: `LAYING`, `SITTING`,`STANDING`, `WALKING`, `WALKING_DOWNSTAIRS`, `WALKING_UPSTAIRS`.
+"Activities": Activities performed by the subjects in the experiment. Activities is a `factor` with 6 levels. The levels are: `LAYING`, `SITTING`,`STANDING`, `WALKING`, `WALKING_DOWNSTAIRS`, `WALKING_UPSTAIRS`.
 
-"Subjects": An identifier of the subject who carried out the experiment. There are 30 subjects.
+"Subjects": An identifier of the subject who carried out the experiment. The variable "Subjects" is an `integer` going from 1 to 30. There are 30 subjects.
 
-The measurement variables start with "Mean" because they represent the average of each variable for each activity and each subject.
+The measurement variables start with "Mean" because they represent the average of each variable for each activity and each subject. The measurement variables are `numeric`.
 
 There are signals that are collected in 3-axial signals in the `X`, `Y` and `Z` directions, which are denoted with '.XYZ' in the variable name, these features are the following:
 
@@ -191,13 +191,13 @@ The detailed explanation of how each measurement variable was calculated is in t
 
 Information about the summary choices made:
 
-The orginal data set contains:
+The original data set contains:
 - for the training set: **7,352** observations and **563** variables (**561** measurement variables + **1** variable for activities and **1** variable for subjects).
 - for the test set: **2,947** observations and **563** variables (**561** measurement variables + **1** variable for activities and **1** variable for subjects).
 
 The script merges the training and the test sets to create one data set. The merged data set contains **10,299** observations and **563** variables.
 
-The **563** variables of the data set were appropriately labeled with descriptive variable names from the complete list of variables of each feature vector in 'features.txt', available at: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+The **563** variables of the data set were appropriately labelled with descriptive variable names from the complete list of variables of each feature vector in 'features.txt', available at: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 From the complete data set, the 'run_analysis.R' script extracts only the measurements on the mean and standard deviation for each measurement. The strategy used in this script is to select all columns that have the following names: `mean()`, `std()`, `Subjects` and `Activities`.
 
@@ -205,9 +205,9 @@ This transformation results in a data set containing **10,299** observations and
 
 Once the data frame contains the desired variables, the variable names are corrected to appropriately label the data set with valid variable names, as obtained from the function `make.names()` to make syntactically valid names out of character vectors.
 
-For the purpose of having valid variable names, the symbol parentheses `()` was removed and the symbol hyphen `-` was substituted by a period `.`. In addition to that, an unecessary repetition of the word `Body` was removed.
+For the purpose of having valid variable names, the symbol parentheses `()` was removed and the symbol hyphen `-` was substituted by a period `.`. In addition to that, an unnecessary repetition of the word `Body` was removed.
 
-The activity contains numbers from **1** to **6** to represent the types of activities. The  descriptive activity names `LAYING`, `SITTING`, `STANDING`, `WALKING`, `WALKING_DOWNSTAIRS`, `WALKING_UPSTAIRS` are used  to name the activities.
+The activity contains numbers from **1** to **6** to represent the types of activities. The descriptive activity names `LAYING`, `SITTING`, `STANDING`, `WALKING`, `WALKING_DOWNSTAIRS`, `WALKING_UPSTAIRS` (from the list of activity labels in activity_labels.txt from the original data set) are used  to name the activities.
 
 From the data set above, the script creates a second, independent tidy data set with the
 average of each variable for each activity and each subject.

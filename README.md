@@ -14,7 +14,17 @@ In order to run the script run_analysis.R,  save the file run_analysis.R and the
 
 Open the script run_analysis.R in RStudio and run it.
 
-The run_analysis.R script creates one data set from the original training and test data sets. From this merged data set, it appropriately labels the data set with descriptive variable names. Once the variable names are labeled, it uses the labels to extract only the measurements on the mean and standard deviation for each measurement. It  uses  descriptive activity names to name the activities in the merged data set. Finally, from this data set, it creates a second, independent tidy data set with the average of each variable for each activity and each subject. Details, on how these steps are done, are described in the CodeBook.md and the code is documented in the script run_analysis.R.
+The run_analysis.R script creates one data set from the original training and test data sets.
+
+From this merged data set, it appropriately labels the data set with descriptive variable names from the complete list of variables of each feature vector in 'features.txt' of the original data set.
+
+Once the variable names are labelled, it uses the labels to extract only the measurements on the mean and standard deviation for each measurement.
+
+Once the data frame contains the desired variables, the variable names are corrected to appropriately label the data set with valid variable names.
+
+It  uses  descriptive activity names `LAYING`, `SITTING`, `STANDING`, `WALKING`, `WALKING_DOWNSTAIRS`, `WALKING_UPSTAIRS` from the list of activity labels in activity_labels.txt from the original data set to name the activities in the merged data set.
+
+Finally, from this data set, it creates a second, independent tidy data set with the average of each variable for each activity and each subject. Details, on how these steps are done, are described in the **CodeBook.md** and the code is documented in the script **run_analysis.R**.
 
 After the script run_analysis.R is run and the tidy data set MeansBySubjectsActivities.txt is generated in the working directory, this text file can be read into R using the following code:
 
